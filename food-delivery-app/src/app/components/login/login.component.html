@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div>
+    <div>
+        <mat-toolbar class="toolbar">
+            <button mat-flat-button (click)="onHome()" class="toolbar-button" aria-label="home">
+                <img class="logo-icon" src="assets/logo.svg">
+            </button>
+
+            <span class="toolbar-spacer"></span>
+            <button mat-icon-button aria-label="Account" class="auth-button">
+                <mat-icon class="secondary-mat-icon">account_circle</mat-icon>
+            </button>
+        </mat-toolbar>
+    </div>
+
+    <div class="login-container">
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-subtitle class="header"> <img class="header-image" src="../../../assets/logo.png"> </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="loginFormInstance">
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput type="text" [formControl]="$any(email)">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="$any(password)">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </form>
+                <mat-checkbox class="rememberUser" color="primary"> Remember me </mat-checkbox>
+            </mat-card-content>
+            <mat-card-actions class="actions-container">
+                <!-- <button mat-button color="primary" (click)="openDialog()"> Register </button> -->
+                <button mat-flat-button color="primary" [disabled]="loginFormInstance.invalid" (click)="onLogin()"> Log
+                    In </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
