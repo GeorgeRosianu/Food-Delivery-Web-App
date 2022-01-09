@@ -19,7 +19,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
 @NgModule({
   declarations: [
     LoginComponent
@@ -43,6 +42,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDatepickerModule,
     MatSelectModule,
     MatToolbarModule
-  ]
+  ],
 })
 export class LoginModule { }

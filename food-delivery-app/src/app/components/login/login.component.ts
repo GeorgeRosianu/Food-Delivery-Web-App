@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private _snackBar: MatSnackBar,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
