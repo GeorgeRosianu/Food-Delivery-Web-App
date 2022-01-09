@@ -1,0 +1,72 @@
+import {
+    ValidationErrors,
+    ValidatorFn,
+    AbstractControl,
+    FormControl,
+    FormGroup,
+} from "@angular/forms";
+
+export class CustomValidators {
+    public static numbers(control: AbstractControl) {
+        const regExp: RegExp = /[0-9]/;
+        return regExp.test(control.value) ? null : { notNumber: true };
+    }
+
+    // public static minLength(value: number): ValidatorFn {
+    //     return (c: AbstractControl): { [key: string]: any } => {
+    //       return c.value && c.value.trim().length >= value ? null : { minlength: true };
+    //     };
+    //   }
+
+    public static time(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const value = control.value;
+            if(!value){
+                return null;
+            }
+            return /[0-9]{1,2}:[0-9]{1,2}/.test(value) ? null : { timeInvalid: true };
+        }
+    }
+
+    public static date(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const value = control.value;
+            if(!value){
+                return null;
+            }
+            return /^([0-2][0-9]|(3)[0-1])(-)(((0)[0-9])|((1)[0-2]))(-)\d{4}$/.test(value) ? null : {dateInvalid: true};
+        }
+    }
+
+    public static passwordStrength(): ValidatorFn {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const value = control.value;
+            if(!value){
+                return null;
+            }
+
+            const hasUpperCase = /[A-Z]+/.test(value);
+            const hasLowerCase = /[a-z]+/.test(value);
+            const hasNumeric = /[0-9]+/.test(value);
+            const hasSpecial = /[^A-Za-z0-9 ]+/.test(value);
+            const passwordValid = hasUpperCase && hasLowerCase && hasNumeric && hasSpecial;
+
+            return passwordValid ? null : { passwordStrength: true };
+        }
+    }
+
+    public static passwordMatch(controlName: string, matchingControlName: string) {
+        return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+            return;
+        }
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
+    }
+    }
+}
