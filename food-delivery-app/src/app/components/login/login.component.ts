@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/api/auth.service';
 import { StorageHelper } from 'src/app/core/helpers/storage.helper';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,12 @@ export class LoginComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private router: Router,
     public dialog: MatDialog,
-  ) { }
+    private authenticationService: AuthenticationService
+  ) { 
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/browse']);
+  }
+  }
 
   ngOnInit(): void {
     this.initForm();
