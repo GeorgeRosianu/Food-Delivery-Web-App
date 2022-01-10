@@ -5,6 +5,7 @@ import { BrowseRoutingModule } from './browse-routing.module';
 import { BrowseComponent } from './browse.component';
 
 
+
 @NgModule({
   declarations: [
     BrowseComponent

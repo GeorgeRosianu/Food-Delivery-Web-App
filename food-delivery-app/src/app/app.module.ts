@@ -9,10 +9,6 @@ import { LoginModule } from './components/login/login.module';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
-import { LoginButtonComponent } from './components/login-button/login-button.component';
-import { SignupButtonComponent } from './components/signup-button/signup-button.component';
-import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
-import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
 
 @NgModule({
   declarations: [

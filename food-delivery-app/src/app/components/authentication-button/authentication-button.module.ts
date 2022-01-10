@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,16 +13,20 @@ import { MatInputModule } from '@angular/material/input'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { AuthenticationButtonModule } from '../authentication-button/authentication-button.module';
-
+import { AuthenticationButtonComponent } from '../authentication-button/authentication-button.component';
+import { LoginButtonComponent } from '../login-button/login-button.component';
+import { LogoutButtonComponent } from '../logout-button/logout-button.component';
+import { SignupButtonComponent } from '../signup-button/signup-button.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    AuthenticationButtonComponent,
+    LoginButtonComponent,
+    LogoutButtonComponent,
+    SignupButtonComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -35,7 +38,12 @@ import { AuthenticationButtonModule } from '../authentication-button/authenticat
     MatSidenavModule,
     MatMenuModule,
     MatGridListModule,
-    AuthenticationButtonModule
+  ],
+  exports: [
+    LoginButtonComponent,
+    SignupButtonComponent,
+    LogoutButtonComponent,
+    AuthenticationButtonComponent
   ]
 })
-export class HomeModule { }
+export class AuthenticationButtonModule { }
