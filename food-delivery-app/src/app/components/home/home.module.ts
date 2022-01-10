@@ -14,11 +14,19 @@ import { MatInputModule } from '@angular/material/input'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { AuthenticationButtonComponent } from '../authentication-button/authentication-button.component';
+import { LoginButtonComponent } from '../login-button/login-button.component';
+import { LogoutButtonComponent } from '../logout-button/logout-button.component';
+import { SignupButtonComponent } from '../signup-button/signup-button.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    LoginButtonComponent,
+    SignupButtonComponent,
+    LogoutButtonComponent,
+    AuthenticationButtonComponent
   ],
   imports: [
     CommonModule,

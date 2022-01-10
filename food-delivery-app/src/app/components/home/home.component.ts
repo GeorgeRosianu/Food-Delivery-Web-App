@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+import { AuthService } from '@auth0/auth0-angular';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,8 +15,8 @@ export class HomeComponent implements OnInit {
   isShowHideFlag = "over" as const;
 
   constructor(
-    private _snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    public auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -22,8 +24,22 @@ export class HomeComponent implements OnInit {
 
   showHide() { }
 
-  onAuth() {
-    (<any>this.router).navigate(["/login"])
+  // onAuth() {
+  //   (<any>this.router).navigate(["/login"])
+  // }
+
+  onBrowse() {
+    (<any>this.router).navigate(["/browse"])
+  }
+
+  loginWithRedirect(): void {
+    appState: { target: '/browse' };
+    this.auth.loginWithRedirect();
+  }
+
+  signupWithRedirect(): void {
+    appState: { target: '/browse' };
+    this.auth.loginWithRedirect({ screen_hint: 'signup' });
   }
 
 }
