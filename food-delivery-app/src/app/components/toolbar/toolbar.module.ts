@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { ToolbarComponent } from './toolbar.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,17 +13,14 @@ import { MatInputModule } from '@angular/material/input'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
-
-import { ToolbarModule } from '../toolbar/toolbar.module';
-
+import { AuthenticationButtonModule } from '../authentication-button/authentication-button.module';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    ToolbarComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -36,7 +32,10 @@ import { ToolbarModule } from '../toolbar/toolbar.module';
     MatSidenavModule,
     MatMenuModule,
     MatGridListModule,
-    ToolbarModule
+    AuthenticationButtonModule
+  ],
+  exports: [
+    ToolbarComponent
   ]
 })
-export class HomeModule { }
+export class ToolbarModule { }
