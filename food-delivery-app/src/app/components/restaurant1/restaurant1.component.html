@@ -1,3 +1,102 @@
-<div>
+<div class="container">
     <app-toolbar></app-toolbar>
+
+    <div class="restaurant-container">
+        <mat-card class="first">
+            <mat-card-title class="title"> 85C Bakery Cafe </mat-card-title>
+            <mat-card-subtitle class="subtitle">
+                <div class="subtitle">
+                    <mat-icon> av_timer </mat-icon>
+                    <h3 class="subtitle-text"> 40-50' </h3>
+                </div>
+                <div class="subtitle">
+                    <mat-icon> directions_car </mat-icon>
+                    <h3 class="subtitle-text"> Free </h3>
+                </div>
+                <div class="subtitle">
+                    <mat-icon> thumb_up </mat-icon>
+                    <h3 class="subtitle-text"> 99% </h3>
+                </div>
+            </mat-card-subtitle>
+        </mat-card>
+    </div>
+
+    <div class="menu">
+        <mat-card class="first">
+            <div>
+                <mat-card-title class="menu-title"> Menu </mat-card-title>
+            </div>
+
+            <div class="menu-list">
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="food-title">
+                                Cakes
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <button mat-flat-button class="food-option" (click)="onCreamPuffs()">85C Cream Puffs</button><br>
+                        <button mat-flat-button class="food-option" (click)="onEggTart()">85C Egg Tart</button><br>
+                        <button mat-flat-button class="food-option" (click)="onBlackForest()">Black Forest</button><br>
+                        <button mat-flat-button class="food-option" (click)="onCheeseBites()">Cheese Bites</button><br>
+                        <button mat-flat-button class="food-option" (click)="onCoconutTart()">Coconut Raisin Tart</button><br>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="food-title">
+                                Bread
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <button mat-flat-button class="food-option" (click)="onBerrytale()">Berrytale</button><br>
+                        <button mat-flat-button class="food-option" (click)="onBorohCream()">Boroh Cream Danish</button><br>
+                        <button mat-flat-button class="food-option" (click)="onBoroh()">Boroh Danish</button><br>
+                        <button mat-flat-button class="food-option" (click)="onBrioche()">Brioche</button><br>
+                        <button mat-flat-button class="food-option" (click)="onCheeseBread()">Cheese Bread</button><br>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="food-title">
+                                Drinks
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <button mat-flat-button class="food-option" (click)="onCoffee()">85C Coffee</button><br>
+                        <button mat-flat-button class="food-option" (click)="onAmericano()">Americano</button><br>
+                        <button mat-flat-button class="food-option" (click)="onTea()">Black Tea</button><br>
+                        <button mat-flat-button class="food-option" (click)="onBoba()">Boba</button><br>
+                        <button mat-flat-button class="food-option" (click)="onLatte()">Cafe Latte</button><br>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <div class="order-action">
+                    <button mat-flat-button class="order-button" (click)="onOrder()">Order</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- <div class="menu">
+        <mat-card class="first">
+            <div>
+                <mat-card-title class="menu-title"> Cart </mat-card-title>
+            </div>
+            <div class="menu-list">
+                <mat-list>
+                    <mat-list-item>
+                        <button mat-flat-button class="food-option">85C Coffee</button><br>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button mat-flat-button class="food-option">85C Coffee</button><br>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button mat-flat-button class="food-option">85C Coffee</button><br>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </mat-card>
+    </div> -->
 </div>
