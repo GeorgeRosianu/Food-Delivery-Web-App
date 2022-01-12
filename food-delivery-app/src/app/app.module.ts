@@ -10,6 +10,7 @@ import { LoginModule } from './components/login/login.module';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
+import { Restaurant1Module } from './components/restaurant1/restaurant1.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { environment as env } from '../environments/environment';
     HomeModule,
     LoginModule,
     BrowseModule,
+    Restaurant1Module,
     AuthModule.forRoot({
       ...env.auth,
     })

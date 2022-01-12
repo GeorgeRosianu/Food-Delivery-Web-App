@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-browse',
@@ -9,8 +9,13 @@ import { first } from 'rxjs/operators';
 export class BrowseComponent implements OnInit {
 
   constructor(
+    private router: Router,
   ) { }
 
   ngOnInit() {
+  }
+
+  onRest1() {
+    this.router.navigate(["/bakery85c"])
   }
 }

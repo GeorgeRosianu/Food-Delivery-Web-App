@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
+import { BrowseComponent } from '../browse/browse.component';
 import { HomeComponent } from '../home/home.component';
-import { Restaurant1Component } from '../restaurant1/restaurant1.component';
-import { BrowseComponent } from './browse.component';
+import { Restaurant1Component } from './restaurant1.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BrowseRoutingModule { }
+export class Restaurant1RoutingModule { }
